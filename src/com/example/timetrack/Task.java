@@ -1,10 +1,14 @@
 package com.example.timetrack;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +62,12 @@ public class Task extends Fragment{
             	}
             	mHandler.removeCallbacks(startTimer);
                 mHandler.postDelayed(startTimer, 0);
+                View v = getView();
+                v.setBackgroundColor(Color.rgb(32, 156, 57));
+                startButton.setBackgroundColor(Color.WHITE);
+                stopButton.setBackgroundColor(Color.WHITE);
+                resetButton.setBackgroundColor(Color.WHITE);
+                deleteButton.setBackgroundColor(Color.WHITE);
         	}
         });
 		
@@ -66,6 +76,8 @@ public class Task extends Fragment{
         		hideStopButton();
             	mHandler.removeCallbacks(startTimer);
             	stopped = true;
+            	View v = getView();
+        		v.setBackgroundColor(Color.rgb(222, 36, 48));
         	}
         });
 		
@@ -75,6 +87,7 @@ public class Task extends Fragment{
             	View v = getView();
             	((TextView)v.findViewById(R.id.timer)).setText("00:00:00");
             	((TextView)v.findViewById(R.id.timerMs)).setText(".0");
+            	v.setBackgroundColor(Color.WHITE);
         	}
         });
 		
@@ -99,14 +112,34 @@ public class Task extends Fragment{
 			}
 		});
 		
+		final Context context = getActivity();
+		
 		// Deleting this fragment		
 		deleteButton.setOnClickListener(new OnClickListener() {
         	public void onClick(View view) {  
-                mHandler.removeCallbacks(startTimer);
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.remove(me);
-                fragmentTransaction.commit();
+        		
+        		DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+        		    public void onClick(DialogInterface dialog, int which) {
+        		        switch (which){
+        		        case DialogInterface.BUTTON_POSITIVE:
+        		            //Yes button clicked
+        		        	mHandler.removeCallbacks(startTimer);
+        	                FragmentManager fragmentManager = getFragmentManager();
+        	                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        	                fragmentTransaction.remove(me);
+        	                fragmentTransaction.commit();
+        		            break;
+
+        		        case DialogInterface.BUTTON_NEGATIVE:
+        		            //No button clicked
+        		            break;
+        		        }
+        		    }
+        		};
+
+        		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        		builder.setMessage("Are you sure you want to delete this task?").setPositiveButton("Yes", dialogClickListener)
+        		    .setNegativeButton("No", dialogClickListener).show();
         	}
         });
 		
