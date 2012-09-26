@@ -30,5 +30,6 @@ public class MainActivity extends Activity {
     public void trackTasks(View v){
 		Intent i = new Intent(this, TimeTrack.class);
 		startActivity(i);
+		finish();
 	}
 }

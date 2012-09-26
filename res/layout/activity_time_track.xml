@@ -13,38 +13,37 @@
         android:text="@string/mainMenu" 
         android:onClick="mainMenu" />
 
-    <EditText
-        android:id="@+id/myEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/addItemContentDescription"
-        android:hint="@string/addItemHint" />
-
-
-    <ListView
-        android:id="@+id/myListView"
-        android:layout_width="match_parent"
-        android:layout_height="160px"
-        android:layout_weight="1" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/addTaskText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.07"
+            android:hint="@string/addTaskHint" 
+            android:description="@string/addTaskDescription" />
 
         <Button
             android:id="@+id/addTaskButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
             android:text="@string/addTaskButton" />
-
-        <Button
-            android:id="@+id/deleteTaskButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="@string/deleteTaskButton" />
-
     </LinearLayout>
+
+    <ScrollView 
+        android:id="@+id/scroller"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true" >
+           
+        <LinearLayout
+	        android:id="@+id/taskFragmentContainer"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" />
+        
+    </ScrollView>
 
 </LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/taskName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deleteButtonText"
+            android:textSize="15sp" />
+        
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/updateButtonText"
+            android:textSize="15sp"
+            android:visibility="gone" />
+        
+        <EditText
+            android:id="@+id/editName"
+            android:inputType="text"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="14.50"
+            android:textSize="30sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="14.50"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/timerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.42"
+            android:gravity="right"
+            android:text="@string/timer"
+            android:textSize="20sp" />
+        
+        <TextView
+            android:id="@+id/timerMs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.44"
+            android:gravity="left"
+            android:text="@string/timerMs"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/stopButtonText"
+            android:visibility="gone" />
+            <!-- android:onClick="stopButtonClicked" /> -->
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="@string/startButtonText" />
+            <!-- android:onClick="startButtonClicked" /> -->
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="@string/resetButtonText" />
+            <!-- android:onClick="resetButtonClicked" /> -->
+    </LinearLayout>
+
+</LinearLayout>
