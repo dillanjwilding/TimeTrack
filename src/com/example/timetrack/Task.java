@@ -64,10 +64,6 @@ public class Task extends Fragment{
                 mHandler.postDelayed(startTimer, 0);
                 View v = getView();
                 v.setBackgroundColor(Color.rgb(32, 156, 57));
-                startButton.setBackgroundColor(Color.WHITE);
-                stopButton.setBackgroundColor(Color.WHITE);
-                resetButton.setBackgroundColor(Color.WHITE);
-                deleteButton.setBackgroundColor(Color.WHITE);
         	}
         });
 		
