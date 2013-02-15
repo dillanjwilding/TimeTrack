@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
-=======
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -49,6 +35,5 @@
         android:layout_marginBottom="62dp"
         android:text="@string/author"
         android:textAppearance="?android:attr/textAppearanceLarge" />
->>>>>>> 1a619541cd51884bce0d5b78c410bbe61aa795fb
 
 </RelativeLayout>

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">TimeTrack</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
-=======
 <resources>
 
     <string name="app_name">TimeTrack</string>
@@ -31,6 +23,5 @@
     <string name="editButtonText">Edit</string>
     <string name="deleteButtonText">Delete</string>
     <string name="updateButtonText">Update</string>
->>>>>>> 1a619541cd51884bce0d5b78c410bbe61aa795fb
 
 </resources>

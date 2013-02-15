@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+    
     <LinearLayout
         android:id="@+id/taskName"
         android:layout_width="fill_parent"
@@ -44,9 +44,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="14.50"
             android:textSize="30sp" />
-
     </LinearLayout>
-    
+    
     <LinearLayout
         android:id="@+id/timerLayout"
         android:layout_width="fill_parent"
@@ -61,7 +60,7 @@
             android:gravity="right"
             android:text="@string/timer"
             android:textSize="20sp" />
-        
+        
         <TextView
             android:id="@+id/timerMs"
             android:layout_width="0dp"
